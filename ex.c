@@ -190,3 +190,138 @@ if(pos==1)
     free(ptr)
     return debut ;
 }
+
+//modifier le premier element de la liste
+noeud*modifierD (noeud*debut,int valeur )
+{
+    //tester si la liste est vide 
+    if(debut==null)
+    {
+        printf("la liste est vide ");
+ return debut ;
+ debut -> valeur= valeur ;
+
+ return debut ;
+    }
+
+}
+// modifier dernier element de la liste
+noeud*modifierF (noeud*debut,int valeur )
+{
+    //tester si la liste est vide 
+    if(debut==null)
+    {
+        printf("la liste est vide ");
+ return debut ;
+}
+noeud*ptr;
+ptr = debut ;
+while(ptr->suiv!=null)
+{
+    ptr =ptr -> suiv;
+}
+ptr-> valeur = valeur ;
+return debut ;
+}
+// modifier la valeur d un  element donnee de la liste
+noeud*modifierPOS (noeud*debut,int valeur,int pos )
+{
+    int i ;
+    if(debut == null)
+    {
+        printf("la liste est vide ");
+        return null ;
+    }
+
+int size = taille (debut);
+if (pos <1 || pos > size ){
+printf("la position est validee ");
+return debut;
+else 
+printf("la position est non validee ");
+}
+noeud* tmp ;
+tmp = debut ;
+for (i=1;i<pos;i++)
+{
+    tmp = tmp ->suiv ;
+
+}
+tmp->valeur=valeur;
+return debut ;
+
+}
+// fonction main 
+int main ()
+{
+    noeud * debut = null ;
+    noeud * p = cree(10);
+    noeud * D = cree(20);
+    noeud * T = cree(30);
+
+    printf("adresse du noeud debut :%p ", debut);
+    printf("adresse du noeud debut :%p ", p);
+    printf("adresse du noeud debut :%p ", D);
+    printf("adresse du noeud debut :%p ", T);
+
+debut =P ;
+P->suiv = D;
+D->suiv = T;
+T->suiv = null;
+
+printf("-------------------------\n");
+printf("adresse du noeud  :%p ", debut);
+printf("adresse du noeud suivant  :%p ", P);
+printf("adresse du noeud suivant  :%p ", D);
+printf("adresse du noeud suivant :%p ", T);
+
+printf("-----------------affichage ------------------");
+afficher(debut);
+
+printf("-----------------ajout au debut ------------------");
+debut =ajoutD(debut,30);
+afficher(debut);
+
+printf("-----------------ajout a la fin ------------------");
+debut =ajoutF(debut,300);
+afficher(debut);
+
+printf("-----------------recherche ------------------");
+debut =rechercher(debut,200);
+
+printf("-----------------taille de la liste ------------------");
+printf("la taille %d",taille(debut));
+
+printf("-----------------insertion a une position donnee ------------------");
+debut =(debut,650);
+afficher(debut);
+
+printf("-----------------suppression debut  ------------------");
+debut = suppressionD(debut,870);
+afficher(debut);
+
+printf("-----------------suppression fin  ------------------");
+debut = suppressionF(debut,70);
+afficher(debut);
+
+printf("-----------------suppression position  ------------------");
+debut = suppressionPOS(debut,704);
+afficher(debut);
+
+printf("-----------------modifier debut  ------------------");
+debut = modifierD(debut,760);
+afficher(debut);
+
+printf("-----------------modifier debut  ------------------");
+debut = modifierF(debut,99);
+afficher(debut);
+
+printf("-----------------modifier debut  ------------------");
+debut = modifierPOS(debut,60);
+afficher(debut);
+
+// fin du progamme 
+
+return 0 ;
+
+}

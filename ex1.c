@@ -168,25 +168,3 @@ tmp->suiv=null;
 return debut;
 }
 //supression d un element de la liste a une position donee
-noeud *supprimerPOS (noeud*debut ,int pos )
-{
-    noeud *tmp,*ptr ;
-    tmp =debut ;
-    int i ;
-    //tester  si la liste est vide ou non 
-    if ( debut == null )
-    printf ("la liste est vide ");
-return debut ;
-}
-int size =taille(debut);
-if (pos<1||pos>size)
-{
-    printf("la position est validee");
-    return debut;
-}
-if(pos==1)
-{
-    debut=debut->suiv ;
-    free(ptr)
-    return debut ;
-}
